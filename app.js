@@ -13,9 +13,57 @@ const compChoice = document.querySelector(".comp-choice");
 const myPoints = document.querySelector(".my-points");
 const compPoints = document.querySelector(".comp-points");
 
+const restart = document.querySelector("h1");
+
 
 let myPointsCounter = 0;
 let compPointsCounter = 0;
+
+
+
+
+function restartGame () {
+
+    restart.addEventListener("click", (e)=> {
+        myPointsCounter = 0;
+        myPoints.innerHTML = myPointsCounter;
+
+        compPointsCounter = 0;
+        compPoints.innerHTML = compPointsCounter;
+
+        buttons.forEach(btns => btns.disabled=false);
+        restart.setAttribute("style", "display: none");
+
+        myChoice.innerHTML = "";
+        compChoice.innerHTML = "";
+
+    })
+
+}
+
+
+
+
+
+function checkIfWon () {
+
+
+    if (myPointsCounter === 3) {
+        alert("Congratz, you won!");
+        buttons.forEach(btns => btns.disabled=true);
+        restart.setAttribute("style", "display: block");
+        restartGame();
+
+    } else if (compPointsCounter === 3) {
+        alert("Sorry, but you are a loser!")
+        buttons.forEach(btns => btns.disabled=true);
+        restart.setAttribute("style", "display: block");
+        restartGame();
+    }
+
+    
+
+}
 
 
 
@@ -48,8 +96,9 @@ function addWinPoints () {
     } 
 
 
-
-
+    setTimeout(() => {
+        checkIfWon();
+    }, 200);
 
 }
 
@@ -62,7 +111,7 @@ function compMakeChoice () {
     setTimeout(() => {
       compChoice.innerHTML = choicesArray[Math.floor(Math.random() * 3)];
       addWinPoints();
-    }, 2000);
+    }, 1200);
 
 
   

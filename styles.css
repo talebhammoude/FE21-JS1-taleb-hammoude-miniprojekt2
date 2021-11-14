@@ -1,3 +1,9 @@
 .the-game {
     display: none;
 }
+
+
+h1 {
+    display: none;
+    cursor: pointer;
+}
