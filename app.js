@@ -7,13 +7,33 @@ const yourName = document.querySelector(".your-name");
 
 const buttons = document.querySelectorAll("button");
 
-const stenBtn = document.querySelector(".sten");
-const saxBtn = document.querySelector(".sax");
-const påseBtn = document.querySelector(".påse");
+const myChoice = document.querySelector(".my-choice");
+const compChoice = document.querySelector(".comp-choice");
+
+
+
+function compMakeChoice () {
+    const choicesArray = ["Sten", "Sax", "Påse"];
+
+    setTimeout(() => {
+      compChoice.innerHTML = choicesArray[Math.floor(Math.random() * 3)];
+    }, 2000);
+    
+}
 
 
 
 
+
+function makeChoice () {
+
+    buttons.forEach(btns => btns.addEventListener("click", (e) => {
+        myChoice.innerHTML = e.target.value; 
+        compMakeChoice();
+       
+    }));
+
+}
 
 
 
@@ -26,21 +46,18 @@ function setName () {
 
         theGame.setAttribute("style", "display: block");
         yourName.setAttribute("style", "display: none");
-        console.log(buttons);
+        makeChoice();
 
     });
 }
 
 
 
-function makeChoice () {
-
-
-
-}
 
 
 
 setName();
+
+
 
 
