@@ -72,25 +72,25 @@ function addWinPoints () {
 
     
 
-    if (myChoice.innerHTML == "Sten" && compChoice.innerHTML == "Sax") {
+    if (myChoice.innerHTML == "✊🏼" && compChoice.innerHTML == "✌🏼") {
         myPointsCounter ++; 
         myPoints.innerHTML = myPointsCounter;
 
 
-    } else if (myChoice.innerHTML == "Sten" && compChoice.innerHTML == "Påse") {
+    } else if (myChoice.innerHTML == "✊🏼" && compChoice.innerHTML == "✋🏼") {
         compPointsCounter ++;
         compPoints.innerHTML = compPointsCounter;
 
-    } else if (myChoice.innerHTML == "Sax" && compChoice.innerHTML == "Sten") {
+    } else if (myChoice.innerHTML == "✌🏼" && compChoice.innerHTML == "✊🏼") {
         compPointsCounter ++;
         compPoints.innerHTML = compPointsCounter;
-    } else if (myChoice.innerHTML == "Sax" && compChoice.innerHTML == "Påse") {
+    } else if (myChoice.innerHTML == "✌🏼" && compChoice.innerHTML == "✋🏼") {
         myPointsCounter ++; 
         myPoints.innerHTML = myPointsCounter;
-    } else if (myChoice.innerHTML == "Påse" && compChoice.innerHTML == "Sten") {
+    } else if (myChoice.innerHTML == "✋🏼" && compChoice.innerHTML == "✊🏼") {
         myPointsCounter ++; 
         myPoints.innerHTML = myPointsCounter;
-    } else if (myChoice.innerHTML == "Påse" && compChoice.innerHTML == "Sax") {
+    } else if (myChoice.innerHTML == "✋🏼" && compChoice.innerHTML == "✌🏼") {
         compPointsCounter ++;
         compPoints.innerHTML = compPointsCounter;
     } 
@@ -106,7 +106,7 @@ function addWinPoints () {
 
 
 function compMakeChoice () {
-    const choicesArray = ["Sten", "Sax", "Påse"];
+    const choicesArray = ["✊🏼", "✌🏼", "✋🏼"];
 
     setTimeout(() => {
       compChoice.innerHTML = choicesArray[Math.floor(Math.random() * 3)];
